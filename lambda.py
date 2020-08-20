@@ -1,6 +1,6 @@
 #multiply the exclusive amount by the vat
 def myfunc(n):
-    return lambda a : a*n
+    return lambda a, b : (a*n) + b
 #gets the sum of all clients payments
 def getSum(Payment):
     Payment = lambda a, b, c : a + b + c
@@ -14,9 +14,9 @@ thisdict = {
 }
 
 mydoubler = myfunc(0.16)
-new1 = mydoubler(thisdict.get("client1")) + thisdict.get("client1")
-new2 = mydoubler(thisdict.get("client2")) + thisdict.get("client2")
-new3 = mydoubler(thisdict.get("client3")) + thisdict.get("client3")
+new1 = mydoubler(thisdict.get("client1"), thisdict.get("client1"))
+new2 = mydoubler(thisdict.get("client2"), thisdict.get("client2"))
+new3 = mydoubler(thisdict.get("client3"), thisdict.get("client3"))
 x = 0
 mySum = getSum(x)
 Total = mySum(new1, new2, new3)
